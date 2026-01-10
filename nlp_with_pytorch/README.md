@@ -21,10 +21,19 @@ This repository contains a collection of Natural Language Processing (NLP) proje
 
 - After training, we can sample creative new names by providing a language category and starting letter, and the model generates realistic-sounding names letter by letter until it decides the name is complete.
 
+## Sequence-to-Sequence Translation: Using Attention
+
+- We will be building and training a sequence-to-sequence (Seq2Seq) model with attention mechanism to translate sentences from French to English.
+
+- We preprocess the data by normalizing text (removing accents, lowercasing, filtering special characters) and filter sentence pairs to focus on shorter sentences with specific English prefixes for more efficient learning.
+
+- The model uses teacher forcing during training, where the actual target word is fed as input to the next decoding step, which speeds up training and improves stability.
+
 
 ## Acknowledgment
 
-1. [NLP From Scratch: Classifying Names with a Character-Level RNN](https://docs.pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) tutorial.
-2. [NLP From Scratch: Generating Names with a Character-Level RNN](https://docs.pytorch.org/tutorials/intermediate/char_rnn_generation_tutorial.html) tutorial.
+1. [Classifying Names with a Character-Level RNN](https://docs.pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) tutorial.
+2. [Generating Names with a Character-Level RNN](https://docs.pytorch.org/tutorials/intermediate/char_rnn_generation_tutorial.html) tutorial.
+3. [Translation with a Sequence to Sequence Network and Attention](https://docs.pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html)
 
 
