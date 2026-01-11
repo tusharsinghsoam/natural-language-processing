@@ -14,10 +14,19 @@
 
 - This project uses the GLUE (General Language Understanding Evaluation) MRPC (Microsoft Research Paraphrase Corpus) [dataset from TensorFlow Datasets (TFDS)](https://www.tensorflow.org/datasets/catalog/glue#gluemrpc) to fine-tune a [Bidirectional Encoder Representations from Transformers (BERT)](https://arxiv.org/abs/1810.04805) (Devlin et al., 2018) model using [TensorFlow Model Garden](https://github.com/tensorflow/models).
 
+## Fine Tune a Bert Model: Using Pytorch and Transformer Library
+
+- This project demonstrates fine-tuning the [bert-base-uncased](https://huggingface.co/bert-base-uncased) model for sentence classification using PyTorch and the [Hugging Face Transformers](https://huggingface.co/docs/transformers) library. 
+
+- The implementation uses the [CoLA (Corpus of Linguistic Acceptability)](https://nyu-mll.github.io/CoLA/) dataset to train a binary classifier that determines whether sentences are grammatically acceptable. 
+
+- The model uses BertForSequenceClassification with AdamW optimizer, linear learning rate scheduling, and is evaluated using Matthews Correlation Coefficient (MCC) on out-of-domain test data.
+
 ## Acknowledgment
 
 1. [BERT Preprocessing with TF Text](https://www.tensorflow.org/text/guide/bert_preprocessing_guide) tutorial.
 2. [Fine-tuning a BERT model](https://www.tensorflow.org/tfmodels/nlp/fine_tune_bert)
+3. [BERT Fine-Tuning Tutorial with PyTorch](https://mccormickml.com/2019/07/22/BERT-fine-tuning/)
 
 
 
