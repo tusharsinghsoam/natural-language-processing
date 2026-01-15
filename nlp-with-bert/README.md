@@ -30,12 +30,23 @@
 
 - The notebook demonstrates the complete pipeline: tokenization with special tokens ([CLS], [SEP]), model inference to obtain start and end logits, answer extraction by combining subword tokens, and score visualization using matplotlib and seaborn.
 
+## Fine-tuning BERT for QA
+
+- This project demonstrates fine-tuning a BERT-based model for extractive question answering using the [SQuAD (Stanford Question Answering Dataset)](https://rajpurkar.github.io/SQuAD-explorer/) dataset. The implementation uses [DistilBERT](https://huggingface.co/distilbert/distilbert-base-uncased) from Hugging Face Transformers with PyTorch.
+
+- The notebook covers comprehensive data preprocessing techniques including handling long contexts with sliding windows (stride=128, max_length=512) to create overlapping chunks, using offset mapping to convert character-level answer positions to token-level positions, and managing multiple context chunks per question through overflow tokens.
+
+- The training pipeline uses PyTorch DataLoader with custom dataset classes, AdamW optimizer, and evaluates performance using exact match and F1 score metrics from the `evaluate` library. The model learns to predict start and end positions of answer spans within context passages.
+
+- For inference, the project provides two methods: a simple approach that selects the highest-scoring answer span, and an advanced method that processes multiple answer candidates across chunks and selects the best answer based on combined start and end logits. Both methods demonstrate extracting answers by converting token predictions back to text using offset mappings.
+
 ## Acknowledgment
 
 1. [BERT Preprocessing with TF Text](https://www.tensorflow.org/text/guide/bert_preprocessing_guide) tutorial.
 2. [Fine-tuning a BERT model](https://www.tensorflow.org/tfmodels/nlp/fine_tune_bert)
 3. [BERT Fine-Tuning Tutorial with PyTorch](https://mccormickml.com/2019/07/22/BERT-fine-tuning/)
 4. [Question Answering with a Fine-Tuned BERT](https://mccormickml.com/2020/03/10/question-answering-with-a-fine-tuned-BERT/)
+5. [Fine tuning BERT for Questions answering](https://www.kaggle.com/code/arunmohan003/question-answering-using-bert/notebook)
 
 
 
